@@ -71,7 +71,14 @@ public class Steque<Item> implements Iterable<Item>
      * inserts an item in the steque in stack fashion.
      * @param item Item to be inserted.
      */
-    public void push(Item item) {
+    public void push(Item item) 
+    {
+        if(item == null) throw new IllegalArgumentException();
+        Node oldfirst = first;
+        first = new Node();
+        first.item = item;
+        first.next = oldfirst;
+        if(last == null) last=first;
 
     }
     
